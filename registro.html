@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/java.js">
+    <title>Registrate</title>
+</head>
+    <body class="bk">
+        <div class="esp"> <h1 class="h1r"> REGISTRATE</h1>
+        <button class="btnr"> ¿Ya tienes una cuenta?, Inicia sesión </button>
+    </div> 
+    
+
+
+<form id="registroForm" class="divr" action="crud/registrar_persona.php" method="POST">
+
+<h2 class="h2r">Registrate</h2>
+<br>
+<div>
+    <div class="inputContainer">
+        <input type="text" id="nombres" name="nombres" autocomplete="off" required class="customInput">
+        <label for="nombres" class="inputLabel">Nombres</label>
+        <div class="inputUnderline"></div>
+      </div> 
+      <br>
+      <div class="inputContainer1">
+        <input type="text" id="apaterno" name="apaterno" autocomplete="off" required class="customInput1">
+        <label for="apaterno" class="inputLabel1">Apellido paterno</label>
+        <div class="inputUnderline1"></div>
+      </div>
+      <br>
+      <div class="inputContainer2">
+        <input type="text" id="amaterno" name="amaterno" autocomplete="off" required class="customInput2">
+        <label for="amaterno" class="inputLabel2">Apellido materno</label>
+        <div class="inputUnderline2"></div>
+      </div>
+    <br>
+    <div class="inputContainer3">
+        <input type="date" id="fnac" name="fnac" autocomplete="off" required class="customInput3">
+        <label for="fnac" class="inputLabel3">Fecha de nacimiento</label>
+        <div class="inputUnderline3"></div>
+      </div>
+      <br>
+      <div class="inputContainer4">
+        <label for="sexo"  required autocomplete="off" required class="inputLabel4">Sexo</label>
+        <select name="sexo" id="sexo">
+            <option value="" disabled selected>Selecciona una opcion</option>
+            <option id="Masculino" value="Masculino">Masculino</option>
+            <option id="Femenino" value="Femenino">Femenino</option>
+            <option id="No binario" value="No binario">No binario</option>
+        </select>
+        <div class="inputUnderline4"></div>
+      </div>
+    <br> <br><br>
+    <div class="inputContainer3">
+        <label for="pais" class="inputLabel3" style="margin-top: -35px;">País</label>
+        <select name="fk_pais" id="" required autocomplete="off" required>
+            <option value="" disabled selected>Selecciona una opcion</option>
+            <?php foreach($result as $row => $value): ?>
+                <option value="<?php echo $value['pk_pais'] ?>">
+                    <?php echo $value['nom_pais'] ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <div class="inputUnderline3"></div>
+      </div>
+
+</div><br><br>
+<button class="btne" type="submit" value="Enviar"> Enviar</button>
+
+</form>
+
+
+</body>
+</html>
